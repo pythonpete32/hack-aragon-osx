@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import DaoCard from "../cards/DaoCard";
+import DaoCard from "../Cards/DaoCard";
 
 const daos = [
   {
