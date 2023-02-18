@@ -1,16 +1,12 @@
-import { ConnectButton } from '@rainbow-me/rainbowkit'
-import { useAccount } from 'wagmi'
-
-import { Account } from './components'
+import "./styles/index.css";
+import { RouterProvider } from "@tanstack/react-router";
+import { router, RouterDevtools } from "./constants";
 
 export function App() {
-  const { isConnected } = useAccount()
   return (
     <>
-      <h1>wagmi + RainbowKit + Vite</h1>
-
-      <ConnectButton />
-      {isConnected && <Account />}
+      <RouterProvider router={router} />
+      <RouterDevtools router={router} position="bottom-right" />
     </>
-  )
+  );
 }
