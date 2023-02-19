@@ -1,5 +1,5 @@
 import { RootRoute, Route, ReactRouter } from "@tanstack/react-router";
-import { Layout, Home, About } from "../components/Pages";
+import { Layout, Home, NewDao } from "../components/Pages";
 import React from "react";
 
 // create root route
@@ -7,7 +7,7 @@ const rootRoute = new RootRoute({ component: Layout });
 
 const rootChildren = [
   { path: "/", component: Home },
-  { path: "/about", component: About },
+  { path: "/new", component: NewDao },
 ];
 
 // add children to root route
@@ -25,7 +25,7 @@ const routeTree = rootRoute.addChildren(
 export const router = new ReactRouter({ routeTree });
 
 export const RouterDevtools =
-  process.env.NODE_ENV === "production"
+  import.meta.env.MODE === "production"
     ? () => null // Render nothing in production
     : React.lazy(() =>
         import("@tanstack/react-router-devtools").then((res) => ({

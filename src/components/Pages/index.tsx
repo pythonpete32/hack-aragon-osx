@@ -1,5 +1,5 @@
 import Home from "./Home";
-import About from "./About";
+import NewDao from "./NewDao";
 import Layout from "./Layout";
 
-export { Home, About, Layout };
+export { Home, NewDao, Layout };
