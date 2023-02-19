@@ -1,7 +1,7 @@
 import {
   ViewGridIcon,
   TerminalIcon,
-  QuestionMarkCircleIcon,
+  SparklesIcon,
 } from "@heroicons/react/outline";
 
 const navLinks = [
@@ -11,9 +11,9 @@ const navLinks = [
     name: "Start",
   },
   {
-    route: "/about",
-    icon: <QuestionMarkCircleIcon className="w-5 h-5" />,
-    name: "About",
+    route: "/new",
+    icon: <SparklesIcon className="w-5 h-5" />,
+    name: "New DAO",
   },
   {
     route: "https://github.com/pythonpete32/hack-web3-boilerplate",

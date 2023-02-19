@@ -11,10 +11,10 @@ import { publicProvider } from "wagmi/providers/public";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 
 const { chains, provider, webSocketProvider } = configureChains(
-  [mainnet, goerli],
+  [goerli],
   [
-    publicProvider(),
-    alchemyProvider({ apiKey: process.env.VITE_ALCHEMY_API_KEY as string }),
+    // publicProvider(),
+    alchemyProvider({ apiKey: import.meta.env.VITE_ALCHEMY_API_KEY as string }),
   ]
 );
 
