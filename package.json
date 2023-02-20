@@ -22,6 +22,7 @@
     "react-daisyui": "^3.0.2",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
+    "react-query": "^3.39.3",
     "util": "^0.12.4",
     "wagmi": "~0.11.0",
     "zod": "^3.20.6"
