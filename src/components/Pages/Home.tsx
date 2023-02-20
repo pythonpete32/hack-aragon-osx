@@ -1,11 +1,31 @@
 import DaoCard from "../Cards/DaoCard";
 
-import useGetDaos from "../../hooks/useGetDaos";
 import { mockDaos } from "../../constants";
+import {
+  useFetchDaos,
+  useFetchDao,
+  useFetchDaoBalances,
+  useFetchTransfers,
+} from "../../hooks/client";
+import {
+  useFetchMembers,
+  useFetchProposals,
+  useFetchVoteSettings,
+} from "../../hooks/tokenVoting";
+
+const dao1 = "0x04454ba3a874661abbbee846703303a9a0a7a130";
+const votingAddress = "0x2fcc030eb9c6bb0f440abc4042446645f4463068";
 
 export default function Home() {
-  // const { daos, loading, error } = useGetDaos();
-  // console.log({ daos, loading, error });
+  useFetchDao(dao1);
+  // useFetchDaos({});
+  useFetchDaoBalances({ daoAddressOrEns: dao1 });
+  useFetchTransfers({ daoAddressOrEns: dao1 });
+  // useFetchMembers(dao1);
+  useFetchProposals({ daoAddressOrEns: dao1 });
+  useFetchVoteSettings(votingAddress);
+
+  // console.log({ res });
 
   return (
     <div className="grid xl:grid-cols-2 mt-2 gap-8">
