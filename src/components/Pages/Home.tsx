@@ -22,10 +22,8 @@ export default function Home() {
   useFetchDaoBalances({ daoAddressOrEns: dao1 });
   useFetchTransfers({ daoAddressOrEns: dao1 });
   // useFetchMembers(dao1);
-  useFetchProposals({ daoAddressOrEns: dao1 });
-  useFetchVoteSettings(votingAddress);
-
-  // console.log({ res });
+  // useFetchProposals({ daoAddressOrEns: dao1 });
+  // useFetchVoteSettings(votingAddress);
 
   return (
     <div className="grid xl:grid-cols-2 mt-2 gap-8">
