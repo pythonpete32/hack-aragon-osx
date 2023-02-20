@@ -12,7 +12,7 @@ const AragonSDKContext = createContext({});
 export function AragonSDKWrapper({
   children,
 }: AragonSDKWrapperContext): JSX.Element {
-  const [client, setClient] = useState<Client | undefined>(undefined);
+  const [context, setContext] = useState<Context | undefined>(undefined);
   const signer = useSigner().data || undefined;
 
   useEffect(() => {
@@ -29,17 +29,17 @@ export function AragonSDKWrapper({
       ],
       graphqlNodes: [
         {
-          url: "https://subgraph.satsuma-prod.com/aragon/core-goerli/api",
+          url: "https://subgraph.satsuma-prod.com/qHR2wGfc5RLi6/aragon/core-goerli/version/v0.9.1-alpha-old-contr-sig/api", // url: "https://subgraph.satsuma-prod.com/aragon/core-goerli-2/api",
         },
       ],
     };
 
-    const context: Context = new Context(aragonSDKContextParams);
-    setClient(new Client(context));
+    const context = new Context(aragonSDKContextParams);
+    setContext(context);
   }, [signer]);
 
   return (
-    <AragonSDKContext.Provider value={{ client }}>
+    <AragonSDKContext.Provider value={{ context }}>
       {children}
     </AragonSDKContext.Provider>
   );
