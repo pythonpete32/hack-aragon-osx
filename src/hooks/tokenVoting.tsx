@@ -43,7 +43,7 @@ export function useFetchProposals(queryParams: IProposalQueryParams = {}) {
         skip: 0, // optional
         limit: 10, // optional,
         direction: SortDirection.ASC, // optional
-        sortBy: ProposalSortBy.POPULARITY, //optional
+        // sortBy: ProposalSortBy.POPULARITY, //optional
         status: ProposalStatus.ACTIVE, // optional
         ...queryParams,
       }),

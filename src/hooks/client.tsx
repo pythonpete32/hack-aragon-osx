@@ -26,7 +26,7 @@ export function useFetchDaos(queryParams: IDaoQueryParams = {}) {
         skip: 0,
         limit: 10,
         direction: SortDirection.ASC,
-        sortBy: DaoSortBy.POPULARITY,
+        // sortBy: DaoSortBy.POPULARITY,
         ...queryParams,
       }),
     enabled: !!client,
