@@ -18,7 +18,7 @@ const votingAddress = "0x2fcc030eb9c6bb0f440abc4042446645f4463068";
 
 export default function Home() {
   useFetchDao(dao1);
-  // useFetchDaos({});
+  useFetchDaos({});
   useFetchDaoBalances({ daoAddressOrEns: dao1 });
   useFetchTransfers({ daoAddressOrEns: dao1 });
   // useFetchMembers(dao1);
@@ -27,15 +27,30 @@ export default function Home() {
 
   return (
     <div className="grid xl:grid-cols-2 mt-2 gap-8">
-      {mockDaos.map((dao: any, index: number) => (
+      <DaoFeed />
+    </div>
+  );
+}
+
+function DaoFeed() {
+  const { data: daos, isLoading, isError } = useFetchDaos({});
+  if (isLoading) return <div>Loading...</div>;
+  if (isError) return <div>Error</div>;
+  console.log(daos);
+  return (
+    // <div className="grid xl:grid-cols-2 mt-2 gap-8">
+    <>
+      {daos?.map((dao: any, index: number) => (
         <DaoCard
           key={index}
-          name={dao.name}
-          ensName={dao.ensName}
+          name={dao.metadata?.name}
+          ensName={dao.ensDomain}
           address={dao.address}
-          description={dao.description}
+          description={dao.metadata?.description}
+          avatar={dao.metadata?.avatar}
         />
       ))}
-    </div>
+    </>
+    // </div>
   );
 }
