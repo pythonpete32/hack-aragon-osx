@@ -29,7 +29,7 @@ export function AragonSDKWrapper({
       ],
       graphqlNodes: [
         {
-          url: "https://subgraph.satsuma-prod.com/qHR2wGfc5RLi6/aragon/core-goerli/version/v0.9.1-alpha-old-contr-sig/api", // url: "https://subgraph.satsuma-prod.com/aragon/core-goerli-2/api",
+          url: "https://subgraph.satsuma-prod.com/qHR2wGfc5RLi6/aragon/core-goerli/version/v0.7.2-alpha/api", // url: "https://subgraph.satsuma-prod.com/aragon/core-goerli-2/api",
         },
       ],
     };
