@@ -1,5 +1,6 @@
 import React from "react";
 import { ExternalLinkIcon } from "@heroicons/react/outline";
+import { Button } from "@nextui-org/react";
 
 export default function ExternalNavButton({
   url,
@@ -11,10 +12,20 @@ export default function ExternalNavButton({
   name: string;
 }) {
   return (
-    <a href={url} className="btn justify-start align-middle flex p-2 px-4">
-      <div className="px-3">{icon}</div>
-      <div className="font-bold">{name}</div>
-      <ExternalLinkIcon className="absolute w-5 h-5 opacity-50 right-7" />
+    <a href={url} className="justify-center align-middle flex ">
+      <Button
+        icon={icon}
+        size="lg"
+        bordered
+        borderWeight="light"
+        shadow={{ "@xs": true }}
+        color="gradient"
+        css={{
+          width: "100%",
+        }}
+      >
+        <div className="font-bold w-max">{name}</div>
+      </Button>
     </a>
   );
 }
