@@ -20,16 +20,16 @@ export default function Sidebar({
 }) {
   return (
     <aside
-      className="flex flex-col bg-base-200 justify-between min-h-screen overflow-y-auto w-80 lg:pb-0 drop-shadow-md"
+      className="flex flex-col bg-base-300 justify-between min-h-screen overflow-y-auto w-80 lg:pb-0 drop-shadow-2xl"
       aria-label="Sidebar"
     >
       <div>
         <div className="py-4 mt-6 lg:block">
           <div className="px-8 pt-2 cursor-pointer">
-            <div onClick={() => onRoute("/")}>{logo}</div>
+            {/* <div onClick={() => onRoute("/")}>{logo}</div> */}
           </div>
         </div>
-        <ul className="p-4 overflow-y-auto grow space-y-4">
+        <ul className="p-4 overflow-y-auto grow space-y-6">
           {navLinks.map((link, idx) =>
             link.route.charAt(0) === "/" ? (
               <NavButton
