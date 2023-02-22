@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@nextui-org/react": "1.0.0-beta.12",
     "@aragon/sdk-client": "^0.21.0-beta",
     "@headlessui/react": "^1.7.11",
     "@heroicons/react": "^1",

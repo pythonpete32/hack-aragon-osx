@@ -11,18 +11,25 @@ import { App } from "./App";
 import { chains, client } from "./wagmi";
 import { AragonSDKWrapper } from "./lib/AragonContext";
 
+import { createTheme, NextUIProvider } from "@nextui-org/react";
+const theme = createTheme({
+  type: "light",
+});
+
 const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <WagmiConfig client={client}>
       <RainbowKitProvider chains={chains} theme={darkTheme()}>
-        <AragonSDKWrapper>
-          <QueryClientProvider client={queryClient}>
-            <App />
-            <ReactQueryDevtools initialIsOpen={false} />
-          </QueryClientProvider>
-        </AragonSDKWrapper>
+        <NextUIProvider theme={theme}>
+          <AragonSDKWrapper>
+            <QueryClientProvider client={queryClient}>
+              <App />
+              <ReactQueryDevtools initialIsOpen={false} />
+            </QueryClientProvider>
+          </AragonSDKWrapper>
+        </NextUIProvider>
       </RainbowKitProvider>
     </WagmiConfig>
   </React.StrictMode>
