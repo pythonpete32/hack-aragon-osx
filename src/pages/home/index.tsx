@@ -1,11 +1,9 @@
 import React from "react";
-import { VoteSettings } from "../../components/DaoSettings/VoteSettings";
+import { VoteSettings } from "../../components/VoteSettings";
 import { useFetchDaos } from "../../hooks";
 
-const Home = () => {
-  //useFetchDaos();
+export const Home = () => {
+  // useFetchDaos();
 
   return <VoteSettings />;
 };
-
-export default Home;

@@ -15,7 +15,7 @@ const Box = styled("div", {
   height: "auto",
 });
 
-export default function ({
+export function Layout({
   children,
   isLayout = true,
 }: RootLayoutProps): React.ReactElement {

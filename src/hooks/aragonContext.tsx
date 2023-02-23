@@ -14,7 +14,7 @@ export function AragonSDKWrapper({
 }: AragonSDKWrapperContext): JSX.Element {
   const [context, setContext] = useState<Context | undefined>(undefined);
   const signer = useSigner().data || undefined;
-  console.log({ signer });
+  // console.log({ signer });
 
   useEffect(() => {
     const aragonSDKContextParams: ContextParams = {
@@ -24,7 +24,7 @@ export function AragonSDKWrapper({
       web3Providers: ["https://rpc.ankr.com/eth_goerli"],
       ipfsNodes: [
         {
-          url: "https://ipfs.infura.io:5001",
+          url: "https://daobox.infura-ipfs.io",
           headers: { "X-API-KEY": import.meta.env.VITE_IPFS_API_KEY || "" },
         },
       ],

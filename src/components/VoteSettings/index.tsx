@@ -1,5 +1,6 @@
 import React from "react";
 import { Table } from "@nextui-org/react";
+import { useFetchVoteSettings } from "../../hooks";
 
 /*
  *   This is the Vote Settings component for the DAO Settings page.
@@ -9,7 +10,9 @@ import { Table } from "@nextui-org/react";
  *   shows skeleton loader while loading
  **/
 
-export function VoteSettings() {
+export function VoteSettings({ pluginAddress }) {
+  useFetchVoteSettings(pluginAddress);
+
   return (
     <Table bordered compact aria-label="DAO Contracts Table">
       <Table.Header>

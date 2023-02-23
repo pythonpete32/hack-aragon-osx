@@ -1,10 +1,8 @@
-import { Button } from "@nextui-org/react";
-import { ConnectButton } from "@rainbow-me/rainbowkit";
-import Layout from "./components/layout";
+import { Layout } from "./components";
 
 import { Routes, Route, Navigate } from "react-router-dom";
 import "./styles/index.css";
-import Home from "./pages/home";
+import { Home } from "./pages";
 
 export function App() {
   return (
