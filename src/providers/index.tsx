@@ -7,6 +7,7 @@ import { DarkTheme, globalStyles } from "../theme";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { BrowserRouter } from "react-router-dom";
+import { AragonSDKWrapper } from "../hooks";
 
 export function Providers({ children }: { children: React.ReactNode }) {
   globalStyles();
@@ -15,12 +16,14 @@ export function Providers({ children }: { children: React.ReactNode }) {
     <WagmiConfig client={wagmiClient}>
       <RainbowKitProvider chains={wagmiChains} theme={darkTheme()}>
         <QueryClientProvider client={new QueryClient()}>
-          <NextUIProvider theme={DarkTheme}>
-            <BrowserRouter>
-              {children}
-              <ReactQueryDevtools initialIsOpen={false} />
-            </BrowserRouter>
-          </NextUIProvider>
+          <AragonSDKWrapper>
+            <NextUIProvider theme={DarkTheme}>
+              <BrowserRouter>
+                {children}
+                <ReactQueryDevtools initialIsOpen={false} />
+              </BrowserRouter>
+            </NextUIProvider>
+          </AragonSDKWrapper>
         </QueryClientProvider>
       </RainbowKitProvider>
     </WagmiConfig>
