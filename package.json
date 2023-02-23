@@ -13,6 +13,7 @@
     "wagmi": "wagmi generate"
   },
   "dependencies": {
+    "@aragon/sdk-client": "0.21.2-beta",
     "@nextui-org/react": "1.0.0-beta.12",
     "@rainbow-me/rainbowkit": "^0.11.0",
     "@wagmi/cli": "~0.1.5",
