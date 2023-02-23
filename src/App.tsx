@@ -1,12 +1,19 @@
+import { Button } from "@nextui-org/react";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
+import Layout from "./components/layout";
+
+import { Routes, Route, Navigate } from "react-router-dom";
 import "./styles/index.css";
-import { RouterProvider } from "@tanstack/react-router";
-import { router, RouterDevtools } from "./constants";
+import Home from "./pages/home";
 
 export function App() {
   return (
-    <>
-      <RouterProvider router={router} />
-      <RouterDevtools router={router} position="bottom-right" />
-    </>
+    <Layout>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/new" element={<h1>New</h1>} />
+        <Route path="/*" element={<Navigate to="/" />} />
+      </Routes>
+    </Layout>
   );
 }
