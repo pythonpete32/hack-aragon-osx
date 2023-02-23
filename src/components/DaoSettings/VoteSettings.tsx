@@ -1,6 +1,14 @@
 import React from "react";
 import { Table } from "@nextui-org/react";
 
+/*
+ *   This is the Vote Settings component for the DAO Settings page.
+ *   It is a table that displays the DAO's vote settings.
+ *   takes in pluginAddress as a prop
+ *   gets settings from fetchVoteSettings hook
+ *   shows skeleton loader while loading
+ **/
+
 export function VoteSettings() {
   return (
     <Table bordered compact aria-label="DAO Contracts Table">
